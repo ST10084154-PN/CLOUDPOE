@@ -1,0 +1,10 @@
+[HttpPost]
+public IActionResult PlaceOrder(OrderModel model)
+{
+    if (ModelState.IsValid)
+    {
+        databaseHelper.InsertOrder(model);
+        return RedirectToAction("OrderSuccess");
+    }
+    return View(model);
+}
