@@ -1,0 +1,5 @@
+public IActionResult ProcessOrder(int orderId)
+{
+    databaseHelper.UpdateOrderStatus(orderId, "Processed");
+    return RedirectToAction("ManageOrders");
+}
