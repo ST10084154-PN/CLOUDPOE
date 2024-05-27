@@ -1,0 +1,18 @@
+public class DatabaseHelper
+{
+    private readonly string connectionString = "YourAzureSQLDatabaseConnectionString";
+
+    public DataTable GetProducts()
+    {
+        using (SqlConnection con = new SqlConnection(connectionString))
+        {
+            string query = "SELECT * FROM Products";
+            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+    }
+
+    // Other methods to handle user, product, and order insertions
+}
