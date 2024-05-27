@@ -1,0 +1,10 @@
+[HttpPost]
+public IActionResult AddProduct(ProductModel model)
+{
+    if (ModelState.IsValid)
+    {
+        databaseHelper.InsertProduct(model);
+        return RedirectToAction("Index");
+    }
+    return View(model);
+}
