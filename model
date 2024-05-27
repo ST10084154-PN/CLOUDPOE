@@ -1,0 +1,9 @@
+@foreach (var product in Model.Products)
+{
+    <div>
+        <h2>@product.ProductName</h2>
+        <p>Price: @product.Price</p>
+        <p>Category: @product.Category</p>
+        <p>@(product.Availability ? "Available" : "Out of Stock")</p>
+    </div>
+}
